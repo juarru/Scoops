@@ -15,6 +15,7 @@
 		AA77ED3D1DBE8A50003A33E7 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED3C1DBE8A50003A33E7 /* libxml2.2.tbd */; };
 		AA77ED441DBEA304003A33E7 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */; };
 		AA77ED471DBEA49F003A33E7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED461DBEA49F003A33E7 /* WebKit.framework */; };
+		AA77ED4A1DBEB295003A33E7 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AA77ED421DBE8DF4003A33E7 /* MyDependency-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDependency-Bridging-header.h"; sourceTree = "<group>"; };
 		AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		AA77ED461DBEA49F003A33E7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		AA77ED261DBE88D0003A33E7 /* Scoops */ = {
 			isa = PBXGroup;
 			children = (
+				AA77ED481DBEA54D003A33E7 /* Vcs */,
 				AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */,
 				AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */,
 				AA77ED2E1DBE88D0003A33E7 /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				AA77ED421DBE8DF4003A33E7 /* MyDependency-Bridging-header.h */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA77ED481DBEA54D003A33E7 /* Vcs */ = {
+			isa = PBXGroup;
+			children = (
+				AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */,
+			);
+			name = Vcs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA77ED4A1DBEB295003A33E7 /* NewsTableViewController.swift in Sources */,
 				AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
