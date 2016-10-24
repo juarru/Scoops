@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */; };
-		AA77ED2A1DBE88D0003A33E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED291DBE88D0003A33E7 /* ViewController.swift */; };
 		AA77ED2D1DBE88D0003A33E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */; };
 		AA77ED2F1DBE88D0003A33E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED2E1DBE88D0003A33E7 /* Assets.xcassets */; };
 		AA77ED321DBE88D0003A33E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED301DBE88D0003A33E7 /* LaunchScreen.storyboard */; };
 		AA77ED3B1DBE8A17003A33E7 /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED3A1DBE8A17003A33E7 /* AZSClient.framework */; };
 		AA77ED3D1DBE8A50003A33E7 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED3C1DBE8A50003A33E7 /* libxml2.2.tbd */; };
-		AA77ED411DBE8B6C003A33E7 /* FakeClassAzure.m in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED401DBE8B6C003A33E7 /* FakeClassAzure.m */; };
+		AA77ED441DBEA304003A33E7 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */; };
+		AA77ED471DBEA49F003A33E7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED461DBEA49F003A33E7 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA77ED241DBE88D0003A33E7 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA77ED291DBE88D0003A33E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA77ED2C1DBE88D0003A33E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA77ED2E1DBE88D0003A33E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA77ED311DBE88D0003A33E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,8 +27,9 @@
 		AA77ED3A1DBE8A17003A33E7 /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
 		AA77ED3C1DBE8A50003A33E7 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		AA77ED3E1DBE8B6C003A33E7 /* Scoops-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scoops-Bridging-Header.h"; sourceTree = "<group>"; };
-		AA77ED3F1DBE8B6C003A33E7 /* FakeClassAzure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeClassAzure.h; sourceTree = "<group>"; };
-		AA77ED401DBE8B6C003A33E7 /* FakeClassAzure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeClassAzure.m; sourceTree = "<group>"; };
+		AA77ED421DBE8DF4003A33E7 /* MyDependency-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyDependency-Bridging-header.h"; sourceTree = "<group>"; };
+		AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		AA77ED461DBEA49F003A33E7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA77ED471DBEA49F003A33E7 /* WebKit.framework in Frameworks */,
 				AA77ED3D1DBE8A50003A33E7 /* libxml2.2.tbd in Frameworks */,
+				AA77ED441DBEA304003A33E7 /* MicrosoftAzureMobile.framework in Frameworks */,
 				AA77ED3B1DBE8A17003A33E7 /* AZSClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */,
-				AA77ED291DBE88D0003A33E7 /* ViewController.swift */,
 				AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */,
 				AA77ED2E1DBE88D0003A33E7 /* Assets.xcassets */,
 				AA77ED301DBE88D0003A33E7 /* LaunchScreen.storyboard */,
@@ -78,11 +79,12 @@
 		AA77ED391DBE8929003A33E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA77ED461DBEA49F003A33E7 /* WebKit.framework */,
+				AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */,
 				AA77ED3C1DBE8A50003A33E7 /* libxml2.2.tbd */,
 				AA77ED3A1DBE8A17003A33E7 /* AZSClient.framework */,
-				AA77ED3F1DBE8B6C003A33E7 /* FakeClassAzure.h */,
-				AA77ED401DBE8B6C003A33E7 /* FakeClassAzure.m */,
 				AA77ED3E1DBE8B6C003A33E7 /* Scoops-Bridging-Header.h */,
+				AA77ED421DBE8DF4003A33E7 /* MyDependency-Bridging-header.h */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,8 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA77ED2A1DBE88D0003A33E7 /* ViewController.swift in Sources */,
-				AA77ED411DBE8B6C003A33E7 /* FakeClassAzure.m in Sources */,
 				AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +296,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juarru.Scoops;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Scoops-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyDependency-Bridging-header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -316,7 +316,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.juarru.Scoops;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Scoops-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyDependency-Bridging-header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
