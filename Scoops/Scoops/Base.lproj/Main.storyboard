@@ -32,11 +32,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vko-XD-cRq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELDA" id="vko-XD-cRq">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vko-XD-cRq" id="mq1-SP-5Xp">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -46,7 +46,13 @@
                             <outlet property="delegate" destination="ds0-LX-pnj" id="4cn-fr-XgP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fIg-Qm-BOh"/>
+                    <navigationItem key="navigationItem" id="fIg-Qm-BOh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LPa-Iw-Ice">
+                            <connections>
+                                <action selector="addNewNews:" destination="ds0-LX-pnj" id="skd-fc-VSB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdv-lb-b7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
