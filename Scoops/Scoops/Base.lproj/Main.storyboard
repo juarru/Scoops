@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3sT-LZ-Yq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3sT-LZ-Yq8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Scoops" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--News Table View Controller-->
         <scene sceneID="ekP-f8-uWE">
             <objects>
@@ -61,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1797.5999999999999" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--News Detail Table View Controller-->
         <scene sceneID="7C4-ah-a34">
             <objects>
-                <viewController id="mMS-d3-ghV" sceneMemberID="viewController">
+                <viewController id="mMS-d3-ghV" customClass="NewsDetailTableViewController" customModule="Scoops" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3sV-h8-jL5"/>
                         <viewControllerLayoutGuide type="bottom" id="FIj-AP-yhq"/>
@@ -74,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-09-9zt">
-                                <frame key="frameInset" minX="16" minY="64" width="359" height="173"/>
+                                <frame key="frameInset" minX="16" minY="64" width="343" height="173"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy8-e8-Zdg">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -111,14 +95,80 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="efp-vm-jbe"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-a4-OZF">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditTitle" borderStyle="roundedRect" placeholder="EditTitle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-A7-STa">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditAutor" borderStyle="roundedRect" placeholder="EditAutor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-it-sob">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditPhoto" borderStyle="roundedRect" placeholder="EditPhoto" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPw-ml-oVn">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditLatitude" borderStyle="roundedRect" placeholder="EditLatitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-YQ-Ceo">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditLongitude" borderStyle="roundedRect" placeholder="EditLongitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Vw-uz-TUX">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditNews" borderStyle="roundedRect" placeholder="EditNews" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hw9-gP-pGo">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7To-M5-lAv">
+                                <items>
+                                    <barButtonItem title="Actualizar" id="vEr-C1-xXO">
+                                        <connections>
+                                            <action selector="updateEditNews:" destination="mMS-d3-ghV" id="qM3-Hj-esS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dBP-09-9zt" secondAttribute="trailing" id="1Mu-ab-NsK"/>
+                            <constraint firstItem="dBP-09-9zt" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leadingMargin" constant="16" id="2gj-cN-OoK"/>
+                            <constraint firstItem="FIj-AP-yhq" firstAttribute="top" secondItem="7To-M5-lAv" secondAttribute="bottom" id="2hR-AY-thn"/>
+                            <constraint firstItem="dBP-09-9zt" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leading" constant="16" id="4gI-6a-xRM"/>
+                            <constraint firstItem="K5A-a4-OZF" firstAttribute="top" secondItem="dBP-09-9zt" secondAttribute="bottom" constant="46" id="8Js-VG-BPo"/>
                             <constraint firstAttribute="trailing" secondItem="dBP-09-9zt" secondAttribute="trailing" constant="16" id="Bmj-cW-XMG"/>
-                            <constraint firstItem="dBP-09-9zt" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leading" id="GVd-7q-Io7"/>
+                            <constraint firstItem="7To-M5-lAv" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leading" id="dc6-Ya-ZXg"/>
                             <constraint firstItem="dBP-09-9zt" firstAttribute="top" secondItem="3sV-h8-jL5" secondAttribute="bottom" id="hAa-Bp-zA2"/>
+                            <constraint firstItem="K5A-a4-OZF" firstAttribute="top" secondItem="dBP-09-9zt" secondAttribute="bottom" constant="46" id="hio-0t-jN7"/>
+                            <constraint firstItem="K5A-a4-OZF" firstAttribute="trailing" secondItem="6ZI-8g-a0S" secondAttribute="trailingMargin" id="tPs-WX-Grc"/>
+                            <constraint firstItem="K5A-a4-OZF" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leadingMargin" id="vlb-0d-5sj"/>
+                            <constraint firstAttribute="trailing" secondItem="7To-M5-lAv" secondAttribute="trailing" id="yYw-tf-DZc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="autorLbl" destination="uZF-sc-dm6" id="gMP-Iq-Gbo"/>
+                        <outlet property="autorTxt" destination="b0j-it-sob" id="QoZ-Dx-AV1"/>
+                        <outlet property="fotoLbl" destination="oDX-6x-0fK" id="MSE-Q4-mkk"/>
+                        <outlet property="fotoTxt" destination="uPw-ml-oVn" id="g0s-re-NRU"/>
+                        <outlet property="latitudLbl" destination="P9I-pe-IMm" id="H7W-4I-Za7"/>
+                        <outlet property="latitudTxt" destination="tNh-YQ-Ceo" id="HJv-m8-D2U"/>
+                        <outlet property="longitudLbl" destination="7yQ-bL-g0p" id="702-Ur-jFt"/>
+                        <outlet property="longitudTxt" destination="7Vw-uz-TUX" id="7Rf-AL-zRg"/>
+                        <outlet property="noticiaLbl" destination="MnW-lZ-4PD" id="M8t-Oh-Gcf"/>
+                        <outlet property="noticiaTxt" destination="hw9-gP-pGo" id="Xod-3C-Qmf"/>
+                        <outlet property="tituloLbl" destination="Iy8-e8-Zdg" id="hAu-Z3-uky"/>
+                        <outlet property="tituloTxt" destination="iOs-A7-STa" id="TYW-ba-DOG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fla-Jh-XBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

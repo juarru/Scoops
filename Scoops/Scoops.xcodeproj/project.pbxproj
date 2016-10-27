@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6883601DC281E900A69B8B /* NewsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68835F1DC281E900A69B8B /* NewsDetailTableViewController.swift */; };
 		AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */; };
 		AA77ED2D1DBE88D0003A33E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */; };
 		AA77ED2F1DBE88D0003A33E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED2E1DBE88D0003A33E7 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA68835F1DC281E900A69B8B /* NewsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTableViewController.swift; sourceTree = "<group>"; };
 		AA77ED241DBE88D0003A33E7 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA77ED2C1DBE88D0003A33E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */,
+				AA68835F1DC281E900A69B8B /* NewsDetailTableViewController.swift */,
 			);
 			name = Vcs;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA77ED4A1DBEB295003A33E7 /* NewsTableViewController.swift in Sources */,
+				AA6883601DC281E900A69B8B /* NewsDetailTableViewController.swift in Sources */,
 				AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,7 @@
 				AA77ED381DBE88D0003A33E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
