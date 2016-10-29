@@ -19,7 +19,7 @@ var api = {
         var user = context.user.id;
 
         var query = {
-            sql: "Select * from News where userId = "+ user
+            sql: "Select * from News"
         };
 
         context.data.execute(query)
@@ -31,5 +31,5 @@ var api = {
 
 };
 
-api.get.access = 'anonymous';
+api.get.access = 'authenticated';
 module.exports = api;
