@@ -18,9 +18,27 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let _ = client.currentUser {
+            readAllNews()
+        } else {
+            doLoginInFacebook()
+        }
         
+    }
+    
+    func doLoginInFacebook(){
         
-        readAllNews()
+        client.login(withProvider: "facebook", parameters: nil, controller: self, animated: true) { (user, error) in
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            if let _ = user {
+                self.readAllNews()
+            }
+        }
+        
     }
 
     @IBAction func addNewNews(_ sender: AnyObject) {
