@@ -7,18 +7,18 @@ var api = {
     get: function (req, res, next) {
 
         // chequeo de parametros
-        if (typeof req.params.length <0) {
-            return next();
-        }
+        //if (typeof req.params.length <0) {
+        //    return next();
+        //}
 
         var context = req.azureMobile;
-        var user = context.user.id;
+        //var user = context.user.id;
 
         var query = {
             sql: "Select * from News where state = 1"
         };
 
-        req.azureMobile.data.execute(query)
+        context.data.execute(query)
             .then(function (result) {
                 res.json(result);
             });
@@ -27,5 +27,5 @@ var api = {
 
 };
 
-//api.get.access = "anonymous";
+api.get.access = "anonymous";
 module.exports = api;
