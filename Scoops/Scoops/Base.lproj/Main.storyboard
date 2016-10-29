@@ -30,15 +30,23 @@
                             <outlet property="delegate" destination="ds0-LX-pnj" id="4cn-fr-XgP"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="fIg-Qm-BOh">
+                        <barButtonItem key="leftBarButtonItem" title="Acceso Autores" id="pBh-qT-MLc">
+                            <connections>
+                                <action selector="loginFacebook:" destination="ds0-LX-pnj" id="3nS-7x-4va"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LPa-Iw-Ice">
                             <connections>
                                 <action selector="addNewNews:" destination="ds0-LX-pnj" id="skd-fc-VSB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AddNewNewsButton" destination="LPa-Iw-Ice" id="29M-zf-B4V"/>
+                        <outlet property="loginBtn" destination="pBh-qT-MLc" id="FDW-zr-qvY"/>
                         <segue destination="mMS-d3-ghV" kind="show" identifier="detailNews" id="byi-gv-89Q"/>
                     </connections>
                 </tableViewController>

@@ -21,6 +21,8 @@ class NewsTableViewController: UITableViewController {
 
         if let _ = client.currentUser {
             readAllNews()
+            AddNewNewsButton.isEnabled = true
+            loginBtn.isEnabled = false
         } else {
             
             //doLoginInFacebook()
@@ -40,12 +42,19 @@ class NewsTableViewController: UITableViewController {
             }
             
             if let _ = user {
-                self.readAllNews()
+                self.viewDidLoad()
             }
         }
         
     }
     
+    @IBOutlet weak var loginBtn: UIBarButtonItem!
+    
+    @IBAction func loginFacebook(_ sender: AnyObject) {
+        
+        doLoginInFacebook()
+        
+    }
     
     @IBOutlet weak var AddNewNewsButton: UIBarButtonItem!
 
@@ -182,11 +191,7 @@ class NewsTableViewController: UITableViewController {
     
     func readAllNews(){
         
-        let tableMS = client.table(withName: "News")
-        
-        // let predicate = NSPredicate(format: "author == 'Juan Arillo'")
-        
-        tableMS.read { (results, error) in
+        client.invokeAPI("readAllRecordsLogged", body: nil, httpMethod: "GET", parameters: nil, headers: nil) { (result, response, error) in
             if let _ = error {
                 print (error)
                 return
@@ -198,16 +203,20 @@ class NewsTableViewController: UITableViewController {
                 
             }
             
-            if let items = results {
+            if let _ = result {
+                
+                let json = result as! [NewsRecord]
                 
                 //print(items)
-                for item in items.items! {
-                    self.model?.append(item as! [String : AnyObject])
+                for item in json {
+                    self.model?.append(item)
                 }
+                
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+                
                 
             }
         }
