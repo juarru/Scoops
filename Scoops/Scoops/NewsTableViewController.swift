@@ -23,7 +23,7 @@ class NewsTableViewController: UITableViewController {
             readAllNews()
         } else {
             //doLoginInFacebook()
-            readAllNewsAnonymous()
+            readAllNews()
         }
         
         

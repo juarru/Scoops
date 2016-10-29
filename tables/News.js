@@ -32,12 +32,12 @@ table.insert(function (context) {
  * Trigger para leer con filtros
  */
 
-/*
+
 table.read(function (context) {
     context.query.where ({"state" : 1});
     return context.execute();
 })
-*/
+
 
 /*
 * Permisos de acceso a la tabla
