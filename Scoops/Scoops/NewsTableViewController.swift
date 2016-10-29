@@ -17,14 +17,15 @@ class NewsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+
         if let _ = client.currentUser {
             readAllNews()
         } else {
             //doLoginInFacebook()
             readAllNewsAnonymous()
         }
+        
         
     }
     
