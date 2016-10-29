@@ -12,15 +12,15 @@
             <objects>
                 <tableViewController id="ds0-LX-pnj" customClass="NewsTableViewController" customModule="Scoops" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w71-LK-l1O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELDA" id="vko-XD-cRq">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vko-XD-cRq" id="mq1-SP-5Xp">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -54,11 +54,10 @@
                         <viewControllerLayoutGuide type="bottom" id="FIj-AP-yhq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6ZI-8g-a0S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-09-9zt">
-                                <frame key="frameInset" minX="16" minY="64" width="343" height="173"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dBP-09-9zt">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy8-e8-Zdg">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -136,8 +135,21 @@
                                             <action selector="updateEditNews:" destination="mMS-d3-ghV" id="qM3-Hj-esS"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ume-Va-sC7"/>
+                                    <barButtonItem title="Autorizar" id="kv5-Om-bpy">
+                                        <connections>
+                                            <action selector="autorizar:" destination="mMS-d3-ghV" id="p2y-AX-Uju"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ESTADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-Ww-pSY">
+                                <frame key="frameInset" minX="20" minY="506" width="374" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -158,6 +170,7 @@
                     <connections>
                         <outlet property="autorLbl" destination="uZF-sc-dm6" id="gMP-Iq-Gbo"/>
                         <outlet property="autorTxt" destination="b0j-it-sob" id="QoZ-Dx-AV1"/>
+                        <outlet property="estadoLbl" destination="8lS-Ww-pSY" id="8x2-9s-GCg"/>
                         <outlet property="fotoLbl" destination="oDX-6x-0fK" id="MSE-Q4-mkk"/>
                         <outlet property="fotoTxt" destination="uPw-ml-oVn" id="g0s-re-NRU"/>
                         <outlet property="latitudLbl" destination="P9I-pe-IMm" id="H7W-4I-Za7"/>
@@ -172,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fla-Jh-XBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="141.67916041979012"/>
+            <point key="canvasLocation" x="2584.057971014493" y="141.03260869565219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D1f-7Q-Q8J">

@@ -67,6 +67,15 @@ class NewsDetailTableViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var estadoLbl: UILabel! {
+        
+        didSet {
+            
+            autorizarText()
+            
+        }
+        
+    }
     
     @IBOutlet weak var tituloTxt: UITextField! {
         didSet {
@@ -125,6 +134,8 @@ class NewsDetailTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //callCustomApi()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -144,11 +155,29 @@ class NewsDetailTableViewController: UIViewController {
         
     }
     
+    @IBAction func autorizar(_ sender: AnyObject) {
+     
+        
+        authorizeNews()
+        
+        autorizarText()
+        
+    }
+ 
+    
+    
     
     func updateNews(){
         let tableAz = client?.table(withName: "News")
         
         // Habría que hacer un check de actualizaciones (validaciones)
+        
+        model!["title"] = tituloTxt.text as AnyObject?
+        model!["author"] = autorTxt.text  as AnyObject?
+        model!["photoUrl"] = fotoTxt.text as AnyObject?
+        model!["latitude"] = latitudTxt.text as AnyObject?
+        model!["longitude"] = longitudTxt.text as AnyObject?
+        model!["text"] = noticiaTxt.text as AnyObject?
         
         tableAz?.update(model!, completion: { (result, error) in
             if let _ = error {
@@ -158,6 +187,55 @@ class NewsDetailTableViewController: UIViewController {
             
             print(result)
         })
+        
+        
+        
+        
+    }
+    
+    func authorizeNews(){
+        
+        let tableAz = client?.table(withName: "News")
+        
+        model!["state"] = true as AnyObject?
+        
+        tableAz?.update(model!, completion: { (result, error) in
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            print(result)
+            
+        })
+        
+    }
+    
+    
+    func callCustomApi(){
+        
+        client?.invokeAPI("jarilloappapi", body: nil, httpMethod: "GET", parameters: nil, headers: nil, completion: { (result, response, error) in
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            print(result)
+        })
+        
+    }
+    
+    // MARK: - Auxiliar functions
+    
+    func autorizarText() {
+        
+        let state = model?["state"] as! Bool
+        
+        if state == false {
+            estadoLbl.text = "NO PUBLICADA"
+        } else {
+            estadoLbl.text = "PUBLICADA"
+        }
     }
 
 

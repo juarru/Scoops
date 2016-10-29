@@ -12,7 +12,7 @@ typealias NewsRecord = Dictionary<String, AnyObject>
 
 class NewsTableViewController: UITableViewController {
     
-    var client: MSClient = MSClient(applicationURL: URL(string: "http://jarilloapp.azurewebsites.net")!)
+    var client: MSClient = MSClient(applicationURL: URL(string: "https://jarilloapp.azurewebsites.net")!)
     var model: [Dictionary<String, AnyObject>]? = []
 
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ class NewsTableViewController: UITableViewController {
         
         let tableMS = client.table(withName: "News")
         
-        tableMS.insert(["title" : title, "text" : text, "photoUrl" : photoUrl, "author" : author, "latitude" : latitude, "longitude" : longitude]) { (result, error) in
+        tableMS.insert(["title" : title, "text" : text, "photoUrl" : photoUrl, "author" : author, "latitude" : latitude, "longitude" : longitude, "state" : 0, "points" : 0]) { (result, error) in
             
             if let _ = error {
                 print (error)
