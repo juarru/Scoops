@@ -23,7 +23,7 @@ table.colums = {
 * Permisos de acceso a la tabla
 * */
 
-table.read.access = 'anonymous';
-//table.update.access = 'disable';
+table.read.access = 'authenticated';
+//table.update.access = 'disabled';
 
 module.exports = table;
