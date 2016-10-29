@@ -1,0 +1,26 @@
+{
+  "name": "scoops",
+  "version": "1.0.0",
+  "description": "backend Scoops",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juarru/Scoops.git"
+  },
+  "keywords": [
+    "scoop"
+  ],
+  "author": "Juan Arillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juarru/Scoops/issues"
+  },
+  "homepage": "https://github.com/juarru/Scoops#readme",
+  "dependencies": {
+    "azure-mobile-apps": "^3.0.2",
+    "express": "^4.14.0"
+  }
+}
