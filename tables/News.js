@@ -19,6 +19,25 @@ table.colums = {
     
 };
 
+/**
+ * Trigger para insert userId
+ */
+
+table.insert(function (context) {
+    context.item.userId = context.user.id;
+    return context.execute();
+})
+
+/**
+ * Trigger para leer con filtros
+ */
+
+table.read(function (context) {
+    context.query.where ({"state" : 1});
+    return context.execute();
+})
+
+
 /*
 * Permisos de acceso a la tabla
 * */
