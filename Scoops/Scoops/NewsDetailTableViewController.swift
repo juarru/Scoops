@@ -11,7 +11,7 @@ import UIKit
 class NewsDetailTableViewController: UIViewController {
 
     var model: NewsRecord?
-    var client: MSClient?
+    var client: MSClient = MSClient(applicationURL: URL(string: "https://jarilloapp.azurewebsites.net")!)
     
     
     @IBOutlet weak var tituloLbl: UILabel! {
@@ -77,6 +77,16 @@ class NewsDetailTableViewController: UIViewController {
         
     }
     
+    
+    @IBOutlet weak var valoraTxt: UITextField! {
+        didSet{
+            guard let valora = model?["points"] as! Double? else {
+                return
+            }
+            valoraTxt.text = String(valora)
+        }
+    }
+
     @IBOutlet weak var tituloTxt: UITextField! {
         didSet {
             guard let titulo = model?["title"] as! String? else {
@@ -100,7 +110,11 @@ class NewsDetailTableViewController: UIViewController {
             guard let foto = model?["photoUrl"] as! String? else {
                 return
             }
-            fotoTxt.text = foto
+            
+            if let _ = client.currentUser{
+               fotoTxt.text = foto
+            }
+            
         }
     }
     
@@ -109,7 +123,10 @@ class NewsDetailTableViewController: UIViewController {
             guard let latitud = model?["latitude"] as! Double? else {
                 return
             }
-            latitudTxt.text = String(latitud)
+            if let _ = client.currentUser {
+                latitudTxt.text = String(latitud)
+            }
+            
         }
     }
     
@@ -118,7 +135,9 @@ class NewsDetailTableViewController: UIViewController {
             guard let longitud = model?["longitude"] as! Double? else {
                 return
             }
-            longitudTxt.text = String(longitud)
+            if let _ = client.currentUser {
+                longitudTxt.text = String(longitud)
+            }
         }
     }
     
@@ -127,13 +146,29 @@ class NewsDetailTableViewController: UIViewController {
             guard let noticia = model?["text"] as! String? else {
                 return
             }
-            noticiaTxt.text = noticia
+            if let _ = client.currentUser {
+                noticiaTxt.text = noticia
+            }
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let _ = client.currentUser {
+            return
+        } else {
+            
+            //doLoginInFacebook()
+            tituloTxt.isHidden = true
+            autorTxt.isHidden = true
+            fotoTxt.isHidden = true
+            latitudTxt.isHidden = true
+            longitudTxt.isHidden = true
+            noticiaTxt.isHidden = true
+            estadoLbl.isHidden = true
+        }
         
         //callCustomApi()
 
@@ -168,7 +203,7 @@ class NewsDetailTableViewController: UIViewController {
     
     
     func updateNews(){
-        let tableAz = client?.table(withName: "News")
+        let tableAz = client.table(withName: "News")
         
         // Habría que hacer un check de actualizaciones (validaciones)
         
@@ -178,8 +213,9 @@ class NewsDetailTableViewController: UIViewController {
         model!["latitude"] = latitudTxt.text as AnyObject?
         model!["longitude"] = longitudTxt.text as AnyObject?
         model!["text"] = noticiaTxt.text as AnyObject?
+        model!["points"] = valoraTxt.text as AnyObject?
         
-        tableAz?.update(model!, completion: { (result, error) in
+        tableAz.update(model!, completion: { (result, error) in
             if let _ = error {
                 print(error)
                 return
@@ -195,11 +231,11 @@ class NewsDetailTableViewController: UIViewController {
     
     func authorizeNews(){
         
-        let tableAz = client?.table(withName: "News")
+        let tableAz = client.table(withName: "News")
         
         model!["state"] = true as AnyObject?
         
-        tableAz?.update(model!, completion: { (result, error) in
+        tableAz.update(model!, completion: { (result, error) in
             if let _ = error {
                 print(error)
                 return
@@ -214,7 +250,7 @@ class NewsDetailTableViewController: UIViewController {
     
     func callCustomApi(){
         
-        client?.invokeAPI("jarilloappapi", body: nil, httpMethod: "GET", parameters: nil, headers: nil, completion: { (result, response, error) in
+        client.invokeAPI("jarilloappapi", body: nil, httpMethod: "GET", parameters: nil, headers: nil, completion: { (result, response, error) in
             if let _ = error {
                 print(error)
                 return

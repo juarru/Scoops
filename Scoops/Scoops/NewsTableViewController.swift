@@ -22,7 +22,9 @@ class NewsTableViewController: UITableViewController {
         if let _ = client.currentUser {
             readAllNews()
         } else {
+            
             //doLoginInFacebook()
+            AddNewNewsButton.isEnabled = false
             readAllNewsAnonymous()
         }
         
@@ -43,6 +45,9 @@ class NewsTableViewController: UITableViewController {
         }
         
     }
+    
+    
+    @IBOutlet weak var AddNewNewsButton: UIBarButtonItem!
 
     @IBAction func addNewNews(_ sender: AnyObject) {
     

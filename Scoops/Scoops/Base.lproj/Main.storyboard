@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vko-XD-cRq" id="mq1-SP-5Xp">
-                                    <frame key="frameInset" width="414" height="43"/>
+                                    <frame key="frameInset" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -38,6 +38,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AddNewNewsButton" destination="LPa-Iw-Ice" id="29M-zf-B4V"/>
                         <segue destination="mMS-d3-ghV" kind="show" identifier="detailNews" id="byi-gv-89Q"/>
                     </connections>
                 </tableViewController>
@@ -96,6 +97,11 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-a4-OZF">
                                 <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Valora" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-hc-sgB">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EditTitle" borderStyle="roundedRect" placeholder="EditTitle" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOs-A7-STa">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -181,6 +187,7 @@
                         <outlet property="noticiaTxt" destination="hw9-gP-pGo" id="Xod-3C-Qmf"/>
                         <outlet property="tituloLbl" destination="Iy8-e8-Zdg" id="hAu-Z3-uky"/>
                         <outlet property="tituloTxt" destination="iOs-A7-STa" id="TYW-ba-DOG"/>
+                        <outlet property="valoraTxt" destination="nvH-hc-sgB" id="ad7-HI-gpW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fla-Jh-XBn" userLabel="First Responder" sceneMemberID="firstResponder"/>

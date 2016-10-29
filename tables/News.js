@@ -15,7 +15,8 @@ table.colums = {
     "longitude": "number",
     "state" : "boolean",
     "points" : "number",
-    "counter" : "number"
+    "counter" : "number",
+    "userId" : "string"
     
 };
 
@@ -44,7 +45,7 @@ table.read(function (context) {
 * */
 
 table.read.access = 'anonymous';
-table.update.access = 'authenticated';
+table.update.access = 'anonymous';
 table.delete.access = 'authenticated';
 table.insert.access = 'authenticated';
 
