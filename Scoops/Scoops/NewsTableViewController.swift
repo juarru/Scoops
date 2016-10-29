@@ -213,6 +213,8 @@ class NewsTableViewController: UITableViewController {
         let item = model?[indexPath.row]
         
         performSegue(withIdentifier: "detailNews", sender: item)
+        
+        readAllNews()
     }
     
 
