@@ -77,6 +77,16 @@ class NewsDetailTableViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var valoraLbl: UILabel! {
+        
+        didSet{
+            guard let valora = model?["points"] as! Double? else {
+                return
+            }
+            valoraLbl.text = String(describing: valora)
+        }
+        
+    }
     
     @IBOutlet weak var valoraTxt: UITextField! {
         didSet{
@@ -157,7 +167,7 @@ class NewsDetailTableViewController: UIViewController {
         super.viewDidLoad()
         
         if let _ = client.currentUser {
-            return
+            valoraTxt.isHidden = true
         } else {
             
             //doLoginInFacebook()
@@ -168,6 +178,7 @@ class NewsDetailTableViewController: UIViewController {
             longitudTxt.isHidden = true
             noticiaTxt.isHidden = true
             estadoLbl.isHidden = true
+            valoraLbl.isHidden = true
             autorizarBtn.isEnabled = false
         }
         
@@ -225,6 +236,7 @@ class NewsDetailTableViewController: UIViewController {
             }
             
             print(result)
+            self.viewDidLoad()
         })
         
         

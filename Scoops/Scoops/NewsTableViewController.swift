@@ -23,10 +23,13 @@ class NewsTableViewController: UITableViewController {
             readAllNews()
             AddNewNewsButton.isEnabled = true
             loginBtn.isEnabled = false
+            logoutBtn.isEnabled = true
         } else {
             
             //doLoginInFacebook()
             AddNewNewsButton.isEnabled = false
+            loginBtn.isEnabled = true
+            logoutBtn.isEnabled = false
             readAllNewsAnonymous()
         }
         
@@ -45,6 +48,19 @@ class NewsTableViewController: UITableViewController {
                 self.viewDidLoad()
             }
         }
+    }
+    
+    func doLogoutFromFacebook(){
+        
+        client.logout { (error) in
+            if let _ = error {
+                print(error)
+                return
+            }
+            
+            self.viewDidLoad()
+        }
+        
         
     }
     
@@ -55,6 +71,13 @@ class NewsTableViewController: UITableViewController {
         doLoginInFacebook()
         
     }
+    
+    @IBOutlet weak var logoutBtn: UIBarButtonItem!
+    
+    @IBAction func logoutFacebook(_ sender: AnyObject) {
+        doLogoutFromFacebook()
+    }
+    
     
     @IBOutlet weak var AddNewNewsButton: UIBarButtonItem!
 

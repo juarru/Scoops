@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,16 +38,24 @@
                                 <action selector="loginFacebook:" destination="ds0-LX-pnj" id="3nS-7x-4va"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LPa-Iw-Ice">
-                            <connections>
-                                <action selector="addNewNews:" destination="ds0-LX-pnj" id="skd-fc-VSB"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="LPa-Iw-Ice">
+                                <connections>
+                                    <action selector="addNewNews:" destination="ds0-LX-pnj" id="skd-fc-VSB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Salir" id="fxF-XV-vZf">
+                                <connections>
+                                    <action selector="logoutFacebook:" destination="ds0-LX-pnj" id="P72-Uu-hfr"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AddNewNewsButton" destination="LPa-Iw-Ice" id="29M-zf-B4V"/>
                         <outlet property="loginBtn" destination="pBh-qT-MLc" id="FDW-zr-qvY"/>
+                        <outlet property="logoutBtn" destination="fxF-XV-vZf" id="TnG-9t-nwG"/>
                         <segue destination="mMS-d3-ghV" kind="show" identifier="detailNews" id="byi-gv-89Q"/>
                     </connections>
                 </tableViewController>
@@ -94,6 +103,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noticia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-lZ-4PD">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ValoracionLbl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ue2-0C-fLG">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -196,6 +210,7 @@
                         <outlet property="noticiaTxt" destination="hw9-gP-pGo" id="Xod-3C-Qmf"/>
                         <outlet property="tituloLbl" destination="Iy8-e8-Zdg" id="hAu-Z3-uky"/>
                         <outlet property="tituloTxt" destination="iOs-A7-STa" id="TYW-ba-DOG"/>
+                        <outlet property="valoraLbl" destination="Ue2-0C-fLG" id="n3G-ap-nKK"/>
                         <outlet property="valoraTxt" destination="nvH-hc-sgB" id="ad7-HI-gpW"/>
                     </connections>
                 </viewController>
