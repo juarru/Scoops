@@ -168,6 +168,7 @@ class NewsDetailTableViewController: UIViewController {
             longitudTxt.isHidden = true
             noticiaTxt.isHidden = true
             estadoLbl.isHidden = true
+            autorizarBtn.isEnabled = false
         }
         
         //callCustomApi()
@@ -189,6 +190,8 @@ class NewsDetailTableViewController: UIViewController {
         updateNews()
         
     }
+    
+    @IBOutlet weak var autorizarBtn: UIBarButtonItem!
     
     @IBAction func autorizar(_ sender: AnyObject) {
      

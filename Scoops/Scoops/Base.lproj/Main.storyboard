@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vko-XD-cRq" id="mq1-SP-5Xp">
-                                    <frame key="frameInset" width="414" height="44"/>
+                                    <frame key="frameInset" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -97,7 +97,7 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-a4-OZF">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Valora" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-hc-sgB">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Valora" borderStyle="roundedRect" placeholder="Valora" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-hc-sgB">
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -176,6 +176,7 @@
                     <connections>
                         <outlet property="autorLbl" destination="uZF-sc-dm6" id="gMP-Iq-Gbo"/>
                         <outlet property="autorTxt" destination="b0j-it-sob" id="QoZ-Dx-AV1"/>
+                        <outlet property="autorizarBtn" destination="kv5-Om-bpy" id="zW7-V8-mk6"/>
                         <outlet property="estadoLbl" destination="8lS-Ww-pSY" id="8x2-9s-GCg"/>
                         <outlet property="fotoLbl" destination="oDX-6x-0fK" id="MSE-Q4-mkk"/>
                         <outlet property="fotoTxt" destination="uPw-ml-oVn" id="g0s-re-NRU"/>
