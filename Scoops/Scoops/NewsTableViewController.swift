@@ -22,7 +22,8 @@ class NewsTableViewController: UITableViewController {
         if let _ = client.currentUser {
             readAllNews()
         } else {
-            doLoginInFacebook()
+            //doLoginInFacebook()
+            readAllNewsAnonymous()
         }
         
     }
@@ -145,7 +146,31 @@ class NewsTableViewController: UITableViewController {
     
     func readAllNewsAnonymous(){
         
-        client.invokeAPI(<#T##APIName: String##String#>, body: <#T##Any?#>, httpMethod: <#T##String?#>, parameters: <#T##[AnyHashable : Any]?#>, headers: <#T##[AnyHashable : Any]?#>, completion: <#T##MSAPIBlock?##MSAPIBlock?##(Any?, HTTPURLResponse?, Error?) -> Void#>)
+        client.invokeAPI("readAllRecords", body: nil, httpMethod: "GET", parameters: nil, headers: nil) { (result, response, error) in
+            
+            if let _ = error {
+                print (error)
+                return
+            }
+            
+            if !((self.model?.isEmpty)!) {
+                
+                self.model?.removeAll()
+                
+            }
+            
+            if let _ = result {
+                let json = result as! [NewsRecord]
+                
+                for item in json {
+                    self.model?.append(item)
+                }
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
         
     }
     
