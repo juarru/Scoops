@@ -8,7 +8,6 @@ var express = require("express"),
 var app = express(),
     mobile = azuremobileapps();
 
-mobile.
 
 mobile.tables.import("./tables");
 

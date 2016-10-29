@@ -20,7 +20,7 @@ class NewsTableViewController: UITableViewController {
         
 
         if let _ = client.currentUser {
-            readAllNewsAnonymous()
+            readAllNews()
         } else {
             doLoginInFacebook()
             //readAllNews()
