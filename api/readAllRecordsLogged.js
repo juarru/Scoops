@@ -19,7 +19,7 @@ var api = {
         var user = context.user.id;
 
         var query = {
-            sql: "Select * from News where userId = '" + req.query["id"] + "'"
+            sql: "Select * from News where userId = '" + user + "'"
         };
 
         context.data.execute(query)
