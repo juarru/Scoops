@@ -18,6 +18,7 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         if let _ = client.currentUser {
             readAllNews()
         } else {
@@ -141,6 +142,12 @@ class NewsTableViewController: UITableViewController {
     
     
     // MARK: - Read news
+    
+    func readAllNewsAnonymous(){
+        
+        client.invokeAPI(<#T##APIName: String##String#>, body: <#T##Any?#>, httpMethod: <#T##String?#>, parameters: <#T##[AnyHashable : Any]?#>, headers: <#T##[AnyHashable : Any]?#>, completion: <#T##MSAPIBlock?##MSAPIBlock?##(Any?, HTTPURLResponse?, Error?) -> Void#>)
+        
+    }
     
     func readAllNews(){
         
