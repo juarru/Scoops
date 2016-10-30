@@ -47,6 +47,6 @@ table.read(function (context) {
 table.read.access = 'anonymous';
 table.update.access = 'anonymous';
 table.delete.access = 'authenticated';
-table.insert.access = 'authenticated';
+table.insert.access = 'anonymous';
 
 module.exports = table;

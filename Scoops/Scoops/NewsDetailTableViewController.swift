@@ -120,10 +120,8 @@ class NewsDetailTableViewController: UIViewController {
             guard let foto = model?["photoUrl"] as! String? else {
                 return
             }
+            fotoTxt.text = foto
             
-            if let _ = client.currentUser{
-               fotoTxt.text = foto
-            }
             
         }
     }
@@ -145,9 +143,7 @@ class NewsDetailTableViewController: UIViewController {
             guard let longitud = model?["longitude"] as! Double? else {
                 return
             }
-            if let _ = client.currentUser {
-                longitudTxt.text = String(longitud)
-            }
+            longitudTxt.text = String(longitud)
         }
     }
     
@@ -156,9 +152,9 @@ class NewsDetailTableViewController: UIViewController {
             guard let noticia = model?["text"] as! String? else {
                 return
             }
-            if let _ = client.currentUser {
-                noticiaTxt.text = noticia
-            }
+            
+            noticiaTxt.text = noticia
+            
         }
     }
     
