@@ -18,6 +18,10 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Registrando la celda personalizada
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        self .tableView.register(nib, forCellReuseIdentifier: "CustomCell")
+        
 
         if let _ = client.currentUser {
             readAllNews()
@@ -267,16 +271,19 @@ class NewsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CELDA", for: indexPath)
+        let cell : CustomCell? = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell?
+        
+        //dequeueReusableCellwithIdentifier("CustomCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        // es CELDA
         
         let item = model?[indexPath.row]
         
-        cell.textLabel?.text = item?["title"] as! String?
-        cell.detailTextLabel?.text = item?["author"] as! String?
+        cell?.newsTitle.text = item?["title"] as! String?
+        cell?.newsAuthors.text = item?["author"] as! String?
 
-        return cell
+        return cell!
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

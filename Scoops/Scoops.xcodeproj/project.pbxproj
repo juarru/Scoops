@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA152FAB1DC56FB70000F28B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA152FA91DC56FB70000F28B /* CustomCell.swift */; };
+		AA152FAC1DC56FB70000F28B /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA152FAA1DC56FB70000F28B /* CustomCell.xib */; };
 		AA6883601DC281E900A69B8B /* NewsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68835F1DC281E900A69B8B /* NewsDetailTableViewController.swift */; };
 		AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */; };
 		AA77ED2D1DBE88D0003A33E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA152FA91DC56FB70000F28B /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		AA152FAA1DC56FB70000F28B /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		AA68835F1DC281E900A69B8B /* NewsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTableViewController.swift; sourceTree = "<group>"; };
 		AA77ED241DBE88D0003A33E7 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA152FA81DC56F980000F28B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA152FA91DC56FB70000F28B /* CustomCell.swift */,
+				AA152FAA1DC56FB70000F28B /* CustomCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AA77ED1B1DBE88D0003A33E7 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +84,7 @@
 		AA77ED261DBE88D0003A33E7 /* Scoops */ = {
 			isa = PBXGroup;
 			children = (
+				AA152FA81DC56F980000F28B /* Views */,
 				AA77ED481DBEA54D003A33E7 /* Vcs */,
 				AA77ED271DBE88D0003A33E7 /* AppDelegate.swift */,
 				AA77ED2B1DBE88D0003A33E7 /* Main.storyboard */,
@@ -166,6 +180,7 @@
 			files = (
 				AA77ED321DBE88D0003A33E7 /* LaunchScreen.storyboard in Resources */,
 				AA77ED2F1DBE88D0003A33E7 /* Assets.xcassets in Resources */,
+				AA152FAC1DC56FB70000F28B /* CustomCell.xib in Resources */,
 				AA77ED2D1DBE88D0003A33E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +194,7 @@
 			files = (
 				AA77ED4A1DBEB295003A33E7 /* NewsTableViewController.swift in Sources */,
 				AA6883601DC281E900A69B8B /* NewsDetailTableViewController.swift in Sources */,
+				AA152FAB1DC56FB70000F28B /* CustomCell.swift in Sources */,
 				AA77ED281DBE88D0003A33E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
