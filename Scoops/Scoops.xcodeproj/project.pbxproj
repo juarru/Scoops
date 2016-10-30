@@ -19,6 +19,7 @@
 		AA77ED441DBEA304003A33E7 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */; };
 		AA77ED471DBEA49F003A33E7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77ED461DBEA49F003A33E7 /* WebKit.framework */; };
 		AA77ED4A1DBEB295003A33E7 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */; };
+		AABD936E1DC61CF200D72CAD /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = AABD936D1DC61CF200D72CAD /* noimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AA77ED431DBEA304003A33E7 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		AA77ED461DBEA49F003A33E7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AA77ED491DBEB295003A33E7 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		AABD936D1DC61CF200D72CAD /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		AA77ED1B1DBE88D0003A33E7 = {
 			isa = PBXGroup;
 			children = (
+				AABD936D1DC61CF200D72CAD /* noimage.png */,
 				AA77ED391DBE8929003A33E7 /* Frameworks */,
 				AA77ED261DBE88D0003A33E7 /* Scoops */,
 				AA77ED251DBE88D0003A33E7 /* Products */,
@@ -178,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABD936E1DC61CF200D72CAD /* noimage.png in Resources */,
 				AA77ED321DBE88D0003A33E7 /* LaunchScreen.storyboard in Resources */,
 				AA77ED2F1DBE88D0003A33E7 /* Assets.xcassets in Resources */,
 				AA152FAC1DC56FB70000F28B /* CustomCell.xib in Resources */,

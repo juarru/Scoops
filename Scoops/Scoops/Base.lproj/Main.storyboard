@@ -117,7 +117,8 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="efp-vm-jbe"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-a4-OZF">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K5A-a4-OZF">
+                                <frame key="frameInset" minX="16" minY="252" width="374" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Valora" borderStyle="roundedRect" placeholder="Valora" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvH-hc-sgB">
                                         <nil key="textColor"/>
@@ -164,6 +165,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ume-Va-sC7"/>
+                                    <barButtonItem title="Subir Imagen" id="9IC-9v-RQv">
+                                        <connections>
+                                            <action selector="uploadImage:" destination="mMS-d3-ghV" id="RPm-Fu-MBY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KJp-cA-4Fc"/>
                                     <barButtonItem title="Autorizar" id="kv5-Om-bpy">
                                         <connections>
                                             <action selector="autorizar:" destination="mMS-d3-ghV" id="p2y-AX-Uju"/>
@@ -172,7 +179,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ESTADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-Ww-pSY">
-                                <frame key="frameInset" minX="20" minY="506" width="374" height="41"/>
+                                <frame key="frameInset" minX="16" minY="514" width="374" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -185,7 +192,6 @@
                             <constraint firstItem="dBP-09-9zt" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leadingMargin" constant="16" id="2gj-cN-OoK"/>
                             <constraint firstItem="FIj-AP-yhq" firstAttribute="top" secondItem="7To-M5-lAv" secondAttribute="bottom" id="2hR-AY-thn"/>
                             <constraint firstItem="dBP-09-9zt" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leading" constant="16" id="4gI-6a-xRM"/>
-                            <constraint firstItem="K5A-a4-OZF" firstAttribute="top" secondItem="dBP-09-9zt" secondAttribute="bottom" constant="46" id="8Js-VG-BPo"/>
                             <constraint firstAttribute="trailing" secondItem="dBP-09-9zt" secondAttribute="trailing" constant="16" id="Bmj-cW-XMG"/>
                             <constraint firstItem="7To-M5-lAv" firstAttribute="leading" secondItem="6ZI-8g-a0S" secondAttribute="leading" id="dc6-Ya-ZXg"/>
                             <constraint firstItem="dBP-09-9zt" firstAttribute="top" secondItem="3sV-h8-jL5" secondAttribute="bottom" id="hAa-Bp-zA2"/>
@@ -210,6 +216,7 @@
                         <outlet property="noticiaTxt" destination="hw9-gP-pGo" id="Xod-3C-Qmf"/>
                         <outlet property="tituloLbl" destination="Iy8-e8-Zdg" id="hAu-Z3-uky"/>
                         <outlet property="tituloTxt" destination="iOs-A7-STa" id="TYW-ba-DOG"/>
+                        <outlet property="uploadImgBtn" destination="9IC-9v-RQv" id="6KM-jC-oih"/>
                         <outlet property="valoraLbl" destination="Ue2-0C-fLG" id="n3G-ap-nKK"/>
                         <outlet property="valoraTxt" destination="nvH-hc-sgB" id="ad7-HI-gpW"/>
                     </connections>

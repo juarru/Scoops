@@ -13,10 +13,35 @@ typealias NewsRecord = Dictionary<String, AnyObject>
 class NewsTableViewController: UITableViewController {
     
     var client: MSClient = MSClient(applicationURL: URL(string: "https://jarilloapp.azurewebsites.net")!)
+    var bobClient: AZSCloudBlobClient?
     var model: [Dictionary<String, AnyObject>]? = []
+    
+    // MARK: - Blobs
+    
+    func setupAzureClient()  {
+        
+        do {
+            let credentials = AZSStorageCredentials(accountName: "jarillostorage",
+                                                    accountKey: "Zg2LYpooPxq+psVSKJSiNDC57aHPzXIl0AIxnwJ54s9NxcIHP+Ht0fZzyclEha9Tpk7cDuMs4t5/5Jh3JYO2IA==")
+            let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            bobClient = account.getBlobClient()
+            
+            
+        } catch let error {
+            print(error)
+        }
+        
+    }
+    
+    
+    
+    // MARK: - EndBlobs
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAzureClient()
         
         // Registrando la celda personalizada
         let nib = UINib(nibName: "CustomCell", bundle: nil)
@@ -93,13 +118,13 @@ class NewsTableViewController: UITableViewController {
         let actionOk = UIAlertAction(title: "OK", style: .default) { (alertAction) in
             let titleField = alert.textFields![0] as UITextField
             let textField = alert.textFields![1] as UITextField
-            let photoUrlField = alert.textFields![2] as UITextField
-            let authorField = alert.textFields![3] as UITextField
-            let latitudeField = alert.textFields![4] as UITextField
-            let longitudeField = alert.textFields![5] as UITextField
+            //let photoUrlField = alert.textFields![2] as UITextField
+            let authorField = alert.textFields![2] as UITextField
+            let latitudeField = alert.textFields![3] as UITextField
+            let longitudeField = alert.textFields![4] as UITextField
             
             
-            self.addNewNews(titleField.text!, textField.text!, photoUrlField.text!, authorField.text!, Double(latitudeField.text!)!, Double(longitudeField.text!)!)
+            self.addNewNews(titleField.text!, textField.text!, "https://jarillostorage.blob.core.windows.net/jarillocontainer/1D49082B-5DD9-4D26-8F00-A725508B8D5F", authorField.text!, Double(latitudeField.text!)!, Double(longitudeField.text!)!)
             
         }
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -115,9 +140,11 @@ class NewsTableViewController: UITableViewController {
             textField.placeholder = "Introduce la noticia"
         }
         
+        /*
         alert.addTextField {(photoUrlField) in
             photoUrlField.placeholder = "Introduce imagen"
         }
+        */
         
         alert.addTextField {(authorField) in
             authorField.placeholder = "Introduce el autor"
@@ -146,7 +173,7 @@ class NewsTableViewController: UITableViewController {
         
         let tableMS = client.table(withName: "News")
         
-        tableMS.insert(["title" : title, "text" : text, "photoUrl" : photoUrl, "author" : author, "latitude" : latitude, "longitude" : longitude, "state" : 0, "points" : 0, "counter": 0]) { (result, error) in
+        tableMS.insert(["title" : title, "text" : text, "photoUrl" : "https://jarillostorage.blob.core.windows.net/jarillocontainer/1D49082B-5DD9-4D26-8F00-A725508B8D5F", "author" : author, "latitude" : latitude, "longitude" : longitude, "state" : 0, "points" : 0, "counter": 0]) { (result, error) in
             
             if let _ = error {
                 print (error)
@@ -279,6 +306,35 @@ class NewsTableViewController: UITableViewController {
         // es CELDA
         
         let item = model?[indexPath.row]
+        
+        let url = item?["photoUrl"] as! String?
+        
+        if let url = url {
+            
+            let urlString = "\(url)"
+            let urlFin = NSURL(string: urlString)
+            do {
+                let imageData = try NSData(contentsOf: urlFin as! URL, options: NSData.ReadingOptions())
+                cell?.newsImage?.image = UIImage(data: imageData as Data)
+            } catch {
+                print(error)
+            }
+
+            
+        }
+        
+        /*
+        let imgUrl = item?["photoUrl"] as! String?
+        let url = NSURL(string: imgUrl!)
+        let data = NSData(contentsOf: url as! URL)
+        if data == nil {
+            print("no capturo la imagen")
+        } else {
+            let img = UIImage(data: data! as Data)
+            cell?.newsImage?.image = img
+        }
+        */
+        
         
         cell?.newsTitle.text = item?["title"] as! String?
         cell?.newsAuthors.text = item?["author"] as! String?

@@ -8,10 +8,29 @@
 
 import UIKit
 
-class NewsDetailTableViewController: UIViewController {
+class NewsDetailTableViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var model: NewsRecord?
     var client: MSClient = MSClient(applicationURL: URL(string: "https://jarilloapp.azurewebsites.net")!)
+    var container: AZSCloudBlobContainer?
+    var blob : [AZSCloudBlockBlob] = []
+    var bobClient: AZSCloudBlobClient?
+    
+    func setupAzureClient()  {
+        
+        do {
+            let credentials = AZSStorageCredentials(accountName: "jarillostorage",
+                                                    accountKey: "Zg2LYpooPxq+psVSKJSiNDC57aHPzXIl0AIxnwJ54s9NxcIHP+Ht0fZzyclEha9Tpk7cDuMs4t5/5Jh3JYO2IA==")
+            let account = try AZSCloudStorageAccount(credentials: credentials, useHttps: true)
+            
+            bobClient = account.getBlobClient()
+            
+            
+        } catch let error {
+            print(error)
+        }
+        
+    }
     
     
     @IBOutlet weak var tituloLbl: UILabel! {
@@ -159,8 +178,27 @@ class NewsDetailTableViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var selectImage: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var selectImageBtn: UIButton!
+    
+    @IBAction func selectImageAction(_ sender: AnyObject) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated:true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAzureClient()
+        
+        imagePicker.delegate = self
         
         if let _ = client.currentUser {
             valoraTxt.isHidden = true
@@ -209,7 +247,13 @@ class NewsDetailTableViewController: UIViewController {
         
     }
  
+    @IBOutlet weak var uploadImgBtn: UIBarButtonItem!
     
+    @IBAction func uploadImage(_ sender: AnyObject) {
+        
+        uploadBlob()
+        
+    }
     
     
     func updateNews(){
@@ -240,6 +284,28 @@ class NewsDetailTableViewController: UIViewController {
         
     }
     
+    func uploadBlob() {
+        
+        let myContainer = AZSCloudBlobContainer.init(name: "jarillocontainer", client: bobClient!)
+        
+        let myBlob = myContainer.blockBlobReference(fromName: UUID().uuidString)
+        
+        let image = UIImage(named: "noimage.png")
+        
+        myBlob.upload(from: UIImageJPEGRepresentation(image!, 0.5)!, completionHandler: { (error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            print ("subido")
+        })
+        
+        
+        
+    }
+    
     func authorizeNews(){
         
         let tableAz = client.table(withName: "News")
@@ -259,19 +325,6 @@ class NewsDetailTableViewController: UIViewController {
     }
     
     
-    func callCustomApi(){
-        
-        client.invokeAPI("jarilloappapi", body: nil, httpMethod: "GET", parameters: nil, headers: nil, completion: { (result, response, error) in
-            if let _ = error {
-                print(error)
-                return
-            }
-            
-            print(result)
-        })
-        
-    }
-    
     // MARK: - Auxiliar functions
     
     func autorizarText() {
@@ -284,7 +337,17 @@ class NewsDetailTableViewController: UIViewController {
             estadoLbl.text = "PUBLICADA"
         }
     }
-
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectImage.contentMode = .scaleAspectFit
+            selectImage.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
     /*
